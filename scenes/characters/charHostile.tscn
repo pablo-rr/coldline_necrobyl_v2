@@ -1,12 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/characters/char.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/characters/charHostile.gd" type="Script" id=2]
+[ext_resource path="res://scripts/classes/characters/CharPlayable.gd" type="Script" id=1]
 
-[node name="charHostile" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
-character_id = "NPC"
-
-[node name="toPlayerRaycast" type="RayCast2D" parent="." index="3"]
-enabled = true
-cast_to = Vector2( 0, 0 )
+[node name="player" type="KinematicBody2D"]
+script = ExtResource( 1 )

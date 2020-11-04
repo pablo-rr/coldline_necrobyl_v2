@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "CharHostile",
+"language": "GDScript",
+"path": "res://scripts/classes/characters/CharHostile.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "CharPlayable",
+"language": "GDScript",
+"path": "res://scripts/classes/characters/CharPlayable.gd"
+} ]
 _global_script_class_icons={
-
+"CharHostile": "",
+"CharPlayable": ""
 }
 
 [application]

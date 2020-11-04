@@ -1,4 +1,5 @@
-extends "res://scripts/characters/char.gd"
+extends "res://scripts/classes/characters/Char.gd"
+class_name CharPlayable
 
 onready var lastMousePosition : Vector2 = get_global_mouse_position()
 

@@ -1,4 +1,5 @@
-extends "res://scripts/characters/char.gd"
+extends "res://scripts/classes/characters/Char.gd"
+class_name CharHostile
 
 const MOVEMENT_INNER_WALL : String = "inner_wall"
 const MOVEMENT_OUTER_WALL : String = "outer_wall"
@@ -16,16 +17,12 @@ func _ready() -> void:
 	
 func _physics_process(delta : float) -> void:
 	print(is_seeing_player())
-	update()
 	
 func set_seeing_player(new_seeing : bool) -> void:
 	seeing_player = new_seeing
 	
 func get_seeing_player() -> bool:
 	return seeing_player
-	
-func _draw():
-	draw_line($toPlayerRaycast.position, $toPlayerRaycast.cast_to, Color.red, 4)
 	
 func is_seeing_player() -> bool:
 	var player_position : Vector2 = get_parent().get_node("player").position
