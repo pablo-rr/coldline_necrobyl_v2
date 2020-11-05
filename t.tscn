@@ -5,28 +5,32 @@
 [ext_resource path="res://scenes/characters/charHostile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.7236, 32.0982 )
+extents = Vector2( 68.1944, 129.031 )
 
-[node name="Node2D" type="Node2D"]
+[node name="t" type="Node2D"]
 
-[node name="icon" type="Sprite" parent="."]
-position = Vector2( 149.94, 107.151 )
-scale = Vector2( 14.0135, 8.78708 )
+[node name="floor" type="Sprite" parent="."]
+position = Vector2( 513.432, 303.498 )
+scale = Vector2( 16.7785, 10.0743 )
 texture = ExtResource( 2 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 318.13, -113.098 )
-scale = Vector2( 0.790243, 8.78708 )
-
-[node name="wall" type="Sprite" parent="StaticBody2D"]
-self_modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -42.2868, 41.5769 )
+position = Vector2( 124.359, 190.351 )
 
 [node name="charHostile" parent="." instance=ExtResource( 3 )]
-position = Vector2( 486.498, -424.354 )
+position = Vector2( 689.189, 313.295 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 2.99658, 94.3934 )
+collision_layer = 32
+collision_mask = 111
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 527.404, 271.194 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="StaticBody2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 528.924, 271.766 )
+scale = Vector2( 2.10032, 4.06685 )
+texture = ExtResource( 2 )

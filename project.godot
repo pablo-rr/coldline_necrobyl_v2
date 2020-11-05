@@ -8,20 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "CharHostile",
-"language": "GDScript",
-"path": "res://scripts/classes/characters/CharHostile.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "CharPlayable",
-"language": "GDScript",
-"path": "res://scripts/classes/characters/CharPlayable.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"CharHostile": "",
-"CharPlayable": ""
+
 }
 
 [application]
@@ -57,6 +46,16 @@ event_lshift={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="player_damager"
+2d_physics/layer_3="hostile"
+2d_physics/layer_4="hostile_damager"
+2d_physics/layer_5="pickup"
+2d_physics/layer_6="wall"
+2d_physics/layer_7="destroyable"
 
 [rendering]
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "attack"
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+
+[node name="wep" type="Node2D"]
+
+[node name="bulletInstancePosition" type="Position2D" parent="."]
+
+[node name="leftArm" type="Sprite" parent="."]
+
+[node name="rightArm" type="Sprite" parent="."]
+
+[node name="weaponSprite" type="Sprite" parent="."]
+
+[node name="animations" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 1 )
+anims/idle = SubResource( 2 )
+
+[node name="attackSound" type="AudioStreamPlayer2D" parent="."]
