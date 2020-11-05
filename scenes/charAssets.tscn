@@ -1,5 +1,0 @@
-[gd_scene format=2]
-
-[node name="charAssets" type="Node2D"]
-
-[node name="charSprite" type="Sprite" parent="."]
