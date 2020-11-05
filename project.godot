@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="coldline_necrobyl_dev.2"
 run/main_scene="res://t.tscn"
-config/icon="res://icon.png"
+config/icon="res://art/textures/icons/coldicon.png"
 
 [input]
 
