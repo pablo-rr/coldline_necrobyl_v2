@@ -1,5 +1,7 @@
 extends "res://scripts/characters/Char.gd"
 
+signal player_moved
+
 onready var lastMousePosition : Vector2 = get_global_mouse_position()
 
 func _ready() -> void:
@@ -27,12 +29,16 @@ func movement_inputs() -> void:
 	
 	if(Input.is_action_pressed("event_s")):
 		motion.y = Input.get_action_strength("event_s")
+		emit_signal("player_moved")
 	elif(Input.is_action_pressed("event_w")):
 		motion.y = -Input.get_action_strength("event_w")
+		emit_signal("player_moved")
 	if(Input.is_action_pressed("event_a")):
 		motion.x = -Input.get_action_strength("event_a")
+		emit_signal("player_moved")
 	elif(Input.is_action_pressed("event_d")):
 		motion.x = Input.get_action_strength("event_d")
+		emit_signal("player_moved")
 	
 	motion = motion.normalized() # con esto el jugador se mueve a la velocidad correcta en diagonales
 	motion *= walkspeed
@@ -46,7 +52,7 @@ func attack_inputs() -> void:
 func camera_zoom() -> void:
 	if(Input.is_action_pressed("event_lshift")):
 		var fixedMousePosition = get_viewport().size/2 - get_viewport().get_mouse_position()
-		$camera.offset.x = -fixedMousePosition.x/2.75
-		$camera.offset.y = -fixedMousePosition.y/2.75*16/9
-	elif(Input.is_action_just_released("event_shift")):
-		$camera.offset = Vector2(0, 0)
+		$cam.offset.x = lerp($cam.offset.x, -fixedMousePosition.x/2.75, 0.2)
+		$cam.offset.y = lerp($cam.offset.y, -fixedMousePosition.y/2.75*16/9, 0.2)
+	else:
+		$cam.offset = lerp($cam.offset, Vector2(0, 0), 0.2)

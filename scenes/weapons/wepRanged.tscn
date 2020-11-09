@@ -5,3 +5,5 @@
 
 [node name="wepRanged" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
+
+[node name="bulletInstancePosition" type="Position2D" parent="." index="0"]

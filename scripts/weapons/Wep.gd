@@ -6,9 +6,10 @@ export (float, 0.06, 10.0, 0.02) var time_between_attacks : float = 1.0
 var attack_enabled : bool = true
 
 func attack() -> void:
-	set_attack_enabled(false)
-	$animations.play("idle")
-	$attackSound.play(0.0)
+	if(is_attack_enabled()):
+		set_attack_enabled(false)
+		
+func yield_attack() -> void:
 	yield(get_tree().create_timer(time_between_attacks), "timeout")
 	set_attack_enabled(true)
 

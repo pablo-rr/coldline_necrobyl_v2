@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/characters/charHostile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/weapons/hostile/wepRangedHostileAcid.tscn" type="PackedScene" id=2]
+
+[node name="charHostileRangedTest" instance=ExtResource( 1 )]
+attack_range = 700.0
+
+[node name="wepRangedHostileAcid" parent="weaponSlot" index="0" instance=ExtResource( 2 )]

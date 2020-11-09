@@ -24,9 +24,6 @@ onready var last_position : Vector2 = position
 var character_id : String
 var bullet_direction : Vector2
 
-func _physics_process(delta : float) -> void:
-	pass
-
 func get_weapon() -> Node2D:
 	return $weaponSlot.get_children()[0]
 
@@ -47,8 +44,9 @@ func fix_overdamage():
 func update_last_position() -> void:
 	last_position = position
 
-func damage(quantity : int) -> void:
+func receive_damage(quantity : int) -> void:
 	health -= quantity
+	print(health)
 	fix_overdamage()
 	
 func heal(quantity : int) -> void:
